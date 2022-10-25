@@ -14,6 +14,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
+import com.datatheorem.mobileprotect.MobileProtect;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.pingidentity.authenticatorsampleapp.fragments.SplashFragmentDirections;
 import com.pingidentity.authenticatorsampleapp.managers.PreferencesManager;
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         logFcmRegistrationIdToken();
         setUpNetworkListeners();
         networkViewModel = new ViewModelProvider(this).get(NetworkViewModel.class);
-
     }
 
     ConnectivityManager.NetworkCallback networkCallback = new ConnectivityManager.NetworkCallback(){

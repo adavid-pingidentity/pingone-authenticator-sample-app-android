@@ -7,8 +7,10 @@ buildscript {
             url "https://plugins.gradle.org/m2/"
         }
     }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'com.android.tools.build:gradle:7.3.1'
+        classpath files('/Users/seanglencross/work/AppSecSeanner/pingone-authenticator-sample-app-android/mobile-protect-gradle-plugin.jar')
         classpath 'com.google.gms:google-services:4.3.13'
         /*
          * Gradle plugin called Safe Args that generates simple object and builder classes for
@@ -17,19 +19,20 @@ buildscript {
          * type-safety.
          */
         classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.5.1'
+        classpath 'com.archinamon:android-gradle-aspectj:4.3.0'
 
     }
 
-
 }
 
+
 allprojects {
+
     repositories {
         google()
         mavenCentral()
     }
 }
-
 
 
 

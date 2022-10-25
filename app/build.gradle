@@ -1,15 +1,20 @@
+
+
 apply plugin: 'com.android.application'
 
 /*
  * The Google services plugin for Gradle loads the google-services.json file you have downloaded.
- */
 apply plugin: 'com.google.gms.google-services'
+ */
+
 /*
  * The AndroidX plugin that generates simple object and builder classes for type-safe navigation
  * and access to any associated arguments. Safe Args is strongly recommended for navigating and
  * passing data, because it ensures type-safety.
  */
 apply plugin: 'androidx.navigation.safeargs'
+
+
 
 android {
     compileSdkVersion 33
@@ -23,7 +28,7 @@ android {
          * if you change the application ID, Google Play Store treats the APK as a completely
          * different app. So once you publish your app, you should never change the application ID.
          */
-        applicationId "com.pingidentity.authenticatorsampleapp"
+        applicationId "com.pingidentity.dtmobileprotectscan"
         minSdkVersion 26
         targetSdkVersion 33
         /*
@@ -63,8 +68,13 @@ android {
     }
 
 }
+
+
+apply plugin: 'com.dtplugin.mobileprotect'
+
+
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.aar'])
 
     implementation 'org.slf4j:slf4j-api:1.7.30'
     implementation 'com.github.tony19:logback-android:2.0.0'
@@ -111,13 +121,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.5.1'
     implementation "androidx.drawerlayout:drawerlayout:1.1.1"
 
-
     /*
      * To display a system prompt that requests the user to authenticate
      * using biometric credentials, use the Biometric library.
      */
     implementation 'androidx.biometric:biometric:1.1.0'
-
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
 
 
     // Use the most recent version of CameraX
@@ -129,5 +138,6 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-alpha30"
 
     //implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 
 }
