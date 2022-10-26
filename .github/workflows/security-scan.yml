@@ -3,6 +3,8 @@ name: Build and upload to Data Theorem
 on:
   push:
     branches: [ master ]
+  discussion:
+    types: [created, edited, answered]    
 
 jobs:
   apk:
